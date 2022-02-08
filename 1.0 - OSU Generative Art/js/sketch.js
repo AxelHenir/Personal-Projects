@@ -1,4 +1,6 @@
 // Standard P5 Project
+let combo1 = new Combo;
+let map1 = new Map;
 
 function preload(){
 
@@ -6,19 +8,17 @@ function preload(){
 
 function setup() {
 
-  createCanvas(1000,1000);
-  rectMode(CENTER,CENTER);
+    createCanvas(1000,1000);
+    rectMode(CENTER,CENTER);
+    combo1.populateCombo();
 
 }
 
 function draw() {
-  
-    push();
-    background(150);
-    strokeWeight(3);
-    fill(0);
-    rect(mouseX,mouseY,100,100);
-    pop();
+
+    background(0);
+    combo1.drawCombo();
+    map1.drawMultiplier();
 
 }
 
