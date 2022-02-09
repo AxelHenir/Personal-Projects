@@ -5,18 +5,56 @@ class Combo{
 
     constructor(){
 
-        this.color = {red:random(0,255),green:random(0,255),blue:random(0,255)};
+        this.color = {r:random(0,255),g:random(0,255),b:random(0,255)};
         this.elements = [];
 
+        this.populateCombo();
     }
 
     // Adds some amount of elements to the combo
     populateCombo(){
 
-        let r = floor(random(4,8));
+        // Generate numbe rof elements in the combo
+        let r = floor(random(3,5));
 
         for(let i = 0 ; i < r ; i++ ){
-            this.elements.push(new Element);
+
+            let cleared = false;
+            let x = random(50,950);
+            let y = random(50,950);
+
+            while(!cleared){
+
+                x = random(50,950);
+                y = random(50,950); 
+
+                cleared = true;
+
+                for(let j = 0 ; j < this.elements.length ; j++){
+
+                    if(dist(x,y,this.elements[j].startX,this.elements[j].startY) < 100){
+                        cleared = false;
+                        break;
+                    }
+    
+                }
+
+            }
+            
+            // Random chance to be a slider
+            let r = random(0,100);
+            if(r>60){
+
+                // Slider Element (startX, startY, endX, endY, circleSize, {r,g,b} 
+                this.elements.push(new Element(x,y,random(50,950),random(50,950),config.circleSize,this.color));
+
+            } else {
+
+                // Basic Element (startX, startY, endX, endY, circleSize, {r,g,b} 
+                this.elements.push(new Element(x,y,x,y,config.circleSize,this.color));
+
+            }
+            
         }
     }
     

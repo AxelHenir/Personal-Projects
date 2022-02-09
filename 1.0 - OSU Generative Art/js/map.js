@@ -3,10 +3,10 @@
 
 class Map{
 
-    constructor(){
+    constructor(multiplier){
 
         this.combos = [];
-        this.multiplier = floor(random(0,1200));
+        this.multiplier = multiplier;
 
     }
 
