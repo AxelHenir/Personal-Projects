@@ -5,13 +5,14 @@ class Combo{
 
     constructor(){
 
-        this.color = {red:50,green:100,blue:100};
+        this.color = {red:random(0,255),green:random(0,255),blue:random(0,255)};
         this.elements = [];
 
     }
 
+    // Adds some amount of elements to the combo
     populateCombo(){
-        
+
         let r = floor(random(4,8));
 
         for(let i = 0 ; i < r ; i++ ){
@@ -19,7 +20,7 @@ class Combo{
         }
     }
     
-    // Draws all elements contained int he combo
+    // Draws all elements contained in the combo
     drawCombo(){
 
         this.drawConnectors();
