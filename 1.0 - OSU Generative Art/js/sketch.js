@@ -1,15 +1,24 @@
 // Standard P5 Project
-let combo1 = new Combo;
-let map1 = new Map;
+let combo1 = undefined;
+let map1 = undefined;
+let font = undefined;
+
+const FONT_PATH = "assets/font/123Marker.ttf";
 
 function preload(){
+
+    font = loadFont(FONT_PATH);
 
 }
 
 function setup() {
 
     createCanvas(1000,1000);
-    rectMode(CENTER,CENTER);
+
+    // Instantiate objects
+    combo1 = new Combo;
+    map1 = new Map;
+
     combo1.populateCombo();
 
 }

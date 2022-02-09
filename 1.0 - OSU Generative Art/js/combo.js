@@ -11,8 +11,8 @@ class Combo{
     }
 
     populateCombo(){
+        
         let r = floor(random(4,8));
-        console.log("Making a combo that is ",r," long.");
 
         for(let i = 0 ; i < r ; i++ ){
             this.elements.push(new Element);

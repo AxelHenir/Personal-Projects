@@ -6,7 +6,7 @@ class Map{
     constructor(){
 
         this.combos = [];
-        this.multiplier = "500";
+        this.multiplier = floor(random(0,1200));
 
     }
 
@@ -15,8 +15,10 @@ class Map{
 
         push();
         textAlign(CENTER,CENTER);
-        textSize(32);
-        text(this.multiplier + "x", 50,950);
+        textSize(64);
+        textFont(font);
+        fill(255);
+        text(this.multiplier + " X", 100,950);
         pop();
     }
 
