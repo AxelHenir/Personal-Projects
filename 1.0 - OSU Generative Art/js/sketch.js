@@ -20,6 +20,7 @@ function setup() {
 
     // Instantiate objects
     combo1 = new Combo;
+    // Map(Multiplier)
     map1 = new Map(floor(random(0,1200)));
 
 }

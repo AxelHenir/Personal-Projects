@@ -14,36 +14,47 @@ class Combo{
     // Adds some amount of elements to the combo
     populateCombo(){
 
-        // Generate numbe rof elements in the combo
+        // Generate r number of elements in the combo
         let r = floor(random(3,5));
 
         for(let i = 0 ; i < r ; i++ ){
 
+            // Cleared will be true and will allow the element to spawn when it is not in range of another pre-existing element
             let cleared = false;
-            let x = random(50,950);
-            let y = random(50,950);
 
+            // Variables to hold the x,y pair
+            let x,y;
+
+            // Check to see if too close to other element
             while(!cleared){
 
+                // Try to generate a new (x,y) pair
                 x = random(50,950);
                 y = random(50,950); 
 
+                // Set clearance to spawn
                 cleared = true;
 
+                // For each element, check if too close
                 for(let j = 0 ; j < this.elements.length ; j++){
 
+                    // Check dist to current element
                     if(dist(x,y,this.elements[j].startX,this.elements[j].startY) < 100){
+
+                        // If too close, deny clearance; Start spawning process anew
                         cleared = false;
                         break;
+
                     }
-    
+
                 }
 
             }
             
             // Random chance to be a slider
             let r = random(0,100);
-            if(r>60){
+
+            if(r>60){ // 40% chance to be slider
 
                 // Slider Element (startX, startY, endX, endY, circleSize, {r,g,b} 
                 this.elements.push(new Element(x,y,random(50,950),random(50,950),config.circleSize,this.color));
