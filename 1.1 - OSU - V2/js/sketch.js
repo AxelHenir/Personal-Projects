@@ -1,7 +1,7 @@
 // Standard P5 Project
-let combo1 = undefined;
-let map1 = undefined;
 let font = undefined;
+
+let gg = undefined;
 
 const FONT_PATH = "assets/font/123Marker.ttf";
 
@@ -15,22 +15,14 @@ function setup() {
 
     createCanvas(1000,1000);
 
-    // Instantiate objects
-    combo1 = new Combo;
-    map1 = new Map;
+    gg = new Combo();
 
-    combo1.populateCombo();
 
 }
 
 function draw() {
-
-    // Update map -> 
-
     background(0);
-    combo1.drawCombo();
-    map1.drawMultiplier();
-
+    gg.drawCombo();
 }
 
 function mousePressed(){
