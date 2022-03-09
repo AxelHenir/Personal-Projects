@@ -21,15 +21,18 @@ function setup() {
 }
 
 function draw() {
+
     background(0);
+
     gg.drawCombo();
+
 }
 
-function mousePressed(){
+function keyPressed(){
     switch(keyCode){
 
         case 81: // 81 = Q
-            // Generate new canvas
+            gg.newHitCircle(random(0,1000),random(0,1000));
             break;
     }
 }

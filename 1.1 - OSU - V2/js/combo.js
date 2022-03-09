@@ -2,33 +2,25 @@ class Combo {
 
     constructor(){
 
-        this.elements = [];
-
-        this.lastElement = undefined;
-
-        this.direction = undefined;
-
-        this.newElement(width/2,height/2);
+        this.hitCircles = [];
 
     }
 
     drawCombo(){
-        this.elements.forEach();
-    }
 
-    newElement(x,y){
-
-        let ele = new Element(x,y);
-
-        this.lastElement = ele;
-
-        this.calculateNextDirection();
-
-        this.elements.push(ele);
+        this.hitCircles.forEach((element) => {
+            element.drawHitCircle();
+        });
 
     }
 
-    calculateNextDirection(){
+    newHitCircle(x,y){
+
+        let n = new Hitcircle(x,y);
+
+        this.hitCircles.push(n);
+
+        console.log("new circle at ",x,y, "hitcircle array:",this.hitCircles);
 
     }
 

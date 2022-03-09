@@ -1,14 +1,15 @@
-class Element{
+class Hitcircle{
 
     constructor(x,y){
 
         this.position = createVector(x, y);
 
-        this.opacity = 0;
+        this.opacity = 255;
 
     }
 
-    drawElement(){
+    drawHitCircle(){
+
         push();
         fill(255,255,255,this.opacity);
         ellipseMode(CENTER, CENTER);
@@ -17,10 +18,6 @@ class Element{
         fill(160,50,50,this.opacity);
         ellipse(this.position.x,this.position.y,90,90);
         pop();
-    }
-
-    updateElement(){
-        
     }
 
     setNewPosition(x,y){
