@@ -17,6 +17,7 @@ function setup() {
 
     gg = new Combo();
 
+    setInterval(function(){gg.newHitCircle();},250);
 
 }
 
