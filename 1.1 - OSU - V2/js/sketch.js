@@ -17,7 +17,7 @@ function setup() {
 
     gg = new Combo();
 
-    setInterval(function(){gg.newHitCircle();},250);
+    setInterval(function(){gg.newHitCircle();},200);
 
 }
 
@@ -33,7 +33,7 @@ function keyPressed(){
     switch(keyCode){
 
         case 81: // 81 = Q
-            gg.newHitCircle(random(0,1000),random(0,1000));
+            gg.newHitCircle(mouseX,mouseY);
             break;
     }
 }

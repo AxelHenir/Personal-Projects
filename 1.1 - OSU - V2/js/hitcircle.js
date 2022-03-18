@@ -25,6 +25,7 @@ class Hitcircle{
         noStroke();
         fill(160,50,50,this.opacity);
         ellipse(this.position.x,this.position.y,this.size,this.size);
+
         pop();
     }
 
@@ -34,7 +35,7 @@ class Hitcircle{
 
     updateOpacity(){
 
-        this.opacity = 255*sin(0.04*this.life);
+        this.opacity = 700*sin(0.04*this.life);
         
         this.life ++;
 
